@@ -1,0 +1,7 @@
+asgiref==3.9.1
+Django==4.2
+sqlparse==0.5.3
+
+psycopg2-binary==2.9.9
+dotenv==0.0.5
+guincorn==21.2.0
