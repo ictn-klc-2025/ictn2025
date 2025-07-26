@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g2$)(n7-&^rw$k-wmx_#&h@ipt#d6yz!g)f(oh5xabiaebh-cq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ictnklc.org', 'www.ictnklc.org', 'https://ictnklc.org', '139.59.45.199']
-
+ALLOWED_HOSTS = ['ictnklc.org', 'www.ictnklc.org', 'localhost', '127.0.0.1', '139.59.45.199']
+ 
 
 # Application definition
 
@@ -76,10 +76,16 @@ WSGI_APPLICATION = 'ictn2025.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ictndatabase',
+        'USER': 'ictndatabaseuser',
+        'PASSWORD': 'ictndatabasepassword',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
+
+
 
 
 # Password validation
