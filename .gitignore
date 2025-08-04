@@ -2,10 +2,13 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
+.pyc
 *.pyc
 */*.pyc
 */*/*.pyc
+*/*/*/*.pyc
+
+**/*.pyc
 
 *$py.class
 
