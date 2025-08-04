@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>International Conference on Thin Films & Nanotechnology</title>
+  <title>{% block head_title %}{% endblock head_title %} International Conference on Thin Films & Nanotechnology</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -34,52 +34,66 @@
             </button>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#header-section">Home <span class="sr-only">(current)</span></a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'registration' %}">Registration</a>
+            <!-- href="#features-section"> -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#features-section">Registration</a>
+            <a class="nav-link" href="{% url 'speakers' %}">Speakers</a>  
+          <!-- href="#digital-marketing-section" -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#digital-marketing-section">Speakers</a>  
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#feedback-section">Sponsorship</a>
+            <a class="nav-link" href="{% url 'sponsorship' %}">Sponsorship</a>
+              <!-- href="#feedback-section"> -->
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#feedback-section">Publications</a>
+            <a class="nav-link" href="{% url 'publications' %}">Publications</a>
+              <!-- href="#feedback-section"> -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#feedback-section">Awards</a>
+            <a class="nav-link" href="{% url 'awards' %}">Awards</a>
+              <!-- href="#feedback-section"> -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#feedback-section">Organizers</a>
+            <a class="nav-link" href="{% url 'organizers' %}">Organizers</a>
+              <!-- href="#feedback-section"> -->
           </li>
-          
 
           <li class="nav-item btn-contact-us pl-4 pl-lg-0">
-            <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Previous Conferences</button>
+            <button class="btn btn-info" data-toggle="modal" href="{% url 'home' %}">Previous Conferences</button>
+            <!-- data-target="#exampleModal"> -->
           </li>
         </ul>
       </div>
     </div> 
     </nav>   
   </header>
+
+  
   <div class="banner" >
     <div class="container">
+      {% block banner %}
       <h1 class="font-weight-semibold">3rd International Conference on Thin Films and Nanotechnology</h1>
       <h6 class="font-weight-normal text-muted pb-3">Organized by the <b>Indian Institute of Technology Delhi</b> in Collaboration with Industry Experts.</h6>
       <div>
         <button class="btn btn-opacity-light mr-1">Details Coming Soon</button>
         <!-- <button class="btn btn-opacity-success ml-1">Learn more</button> -->
       </div>
-      <img src="images/Group171.svg" alt="" class="img-fluid">
+      <img src="{% static 'assets/images/Group171.svg' %}" alt="" class="img-fluid">
+        <!-- <img src="{% static 'assets/images/Group2.svg' %}" alt=""> -->
+    {% endblock banner %}
     </div>
   </div>
   
   <div class="content-wrapper">
-    <div class="container" style="min-height: 500px;">
-      {% comment %}
+    <div class="container" style="min-height: 700px;">
+      {% block main %}
       <section class="features-overview" id="features-section" >
         <div class="content-header">
           <h2>How does it works</h2>
@@ -389,12 +403,16 @@
           </div>
         </div>  
       </section>
+      {% endblock main %}
+      {% comment %}
       {% endcomment %}
-      
     </div> 
+
     <footer class="border-top">
       <p class="text-center text-muted pt-4">Copyright © 2025<a href="" class="px-1">STEP Laboratory.</a>All rights reserved.</p>
     </footer>
+
+
     <!-- Modal for Contact - us Button -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
