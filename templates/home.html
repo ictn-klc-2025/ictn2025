@@ -3,6 +3,7 @@
 {% block head_title %}Home |{% endblock head_title %}
 
 
+
 {% block banner %}
 <h1 class="font-weight-semibold">3rd International Conference on Thin Films and Nanotechnology</h1>
 
@@ -69,7 +70,7 @@
       <div class="col-2 col-lg-2 pb-4" style="text-align: left"></div>
     </div>
     <!-- <h4 class="px-3 px-md-0 m-0" data-aos="fade-down">Do you have your projects abstract?</h4> -->
-      <h4 class="pt-1" data-aos="fade-down">Do you have your projects abstract?</h4>
+      <h4 class="pt-1" data-aos="fade-down" style="color: red;">Do you have your projects abstract?</h4>
     <div data-aos="fade-up">
       <a href="https://tinyurl.com/ICTNKLC-Abstract">
       <button class="btn btn-rounded btn-outline-danger">Click here to submit</button>
@@ -78,6 +79,28 @@
   </div>
 </section>
 
+
+<!-- Pop-up overlay -->
+ 
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <h2>WELCOME <br> ICTN-KLC 2025</h2>
+      <img src="{% static 'assets/images/ictnklc_pics/ictnklc_banner.png' %}" alt="International Conference on Thin Films & Nanotechnology">
+      <br>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Show popup on page load
+    window.onload = function() {
+      document.getElementById("popup").style.display = "flex";
+    };
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
 
 {% endblock main %}
 

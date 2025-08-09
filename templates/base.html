@@ -12,6 +12,122 @@
   <link rel="stylesheet" href="{% static 'assets/vendors/mdi/css/materialdesignicons.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/vendors/aos/css/aos.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/style.min.css' %}">
+  <style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 780px;
+  
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+ /* Style for the modal background */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Style for the popup box */
+    .popup-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      max-width: 1000px;
+    }
+
+    .popup-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .close-btn {
+      margin-top: 15px;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      background-color: #0056b3;
+    }
+/* End of Style for the popup box */
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+table,
+    th{
+        border: 3px solid black; 
+    }
+    td {
+        border: 2px solid black; 
+    }
+
+</style>
 </head>
 <body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
   <header id="header-section">
@@ -62,6 +178,11 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'organizers' %}">Organizers</a>
+              <!-- href="#feedback-section"> -->
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract' %}">Abstract</a>
               <!-- href="#feedback-section"> -->
           </li>
 
@@ -410,6 +531,7 @@
       {% endblock footer_nav %}
    
     </div> 
+  
 
     <footer class="border-top">
       <p class="text-center text-muted pt-4">Copyright © 2025<a href="" class="px-1">STEP Laboratory.</a>All rights reserved.</p>
