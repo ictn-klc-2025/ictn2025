@@ -33,6 +33,9 @@ Is An Alias Of: @
 TTL:            43200 (Default)
 
 ssh root@139.59.45.199
+ssh step_lab_user@139.59.45.199
+step@IITD2025TH
+sudo systemctl restart ictn2025
 
 ======================================
 SETTING UP ROOT OS OF THE HOST
