@@ -5,6 +5,49 @@
 
 
 {% block banner %}
+ <div class="announcement-bar">
+  <h1>📢 Announcement: The registration date has been extended till 7 November!</h1>
+</div>
+
+<style>
+  .announcement-bar {
+    width: 100%;
+    background-color: #ffeb3b; /* bright yellow */
+    color: #000; /* black text */
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 70px; /* fixed height to fit h1 */
+    display: flex;
+    align-items: center; /* vertically center the h1 */
+    z-index: 1000;
+  }
+
+  .announcement-bar h1 {
+    display: inline-block;
+    position: absolute;
+    will-change: transform;
+    animation: scrollText 12s linear infinite;
+    font-size: 2.2rem; /* h1-like size */
+    font-weight: 700;
+    margin: 0;
+    line-height: 1; /* keep it compact */
+  }
+
+  @keyframes scrollText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .announcement-bar:hover h1 {
+    animation-play-state: paused;
+  }
+</style> 
+
 <h1 class="font-weight-semibold">3rd International Conference on Thin Films and Nanotechnology</h1>
 
 <h2 class="font-weight-semibold ">A Knowledge, Leadership & Commercialization Conference  </h2>

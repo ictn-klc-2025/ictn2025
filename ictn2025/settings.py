@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g2$)(n7-&^rw$k-wmx_#&h@ipt#d6yz!g)f(oh5xabiaebh-cq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['ictnklc.org', 'www.ictnklc.org', 'localhost', '127.0.0.1', '139.59.45.199']
  
@@ -74,16 +74,16 @@ WSGI_APPLICATION = 'ictn2025.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ictndatabase',
-        'USER': 'ictndatabaseuser',
-        'PASSWORD': 'ictndatabasepassword',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'ictndatabase',
+#         'USER': 'ictndatabaseuser',
+#         'PASSWORD': 'ictndatabasepassword',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 
