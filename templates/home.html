@@ -17,10 +17,10 @@
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    height: 70px; /* fixed height to fit h1 */
+    height: 70px;
     display: flex;
-    align-items: center; /* vertically center the h1 */
-    z-index: 1000;
+    align-items: center;
+    z-index: 10; /* LOWER than sidebar */
   }
 
   .announcement-bar h1 {
@@ -28,10 +28,11 @@
     position: absolute;
     will-change: transform;
     animation: scrollText 12s linear infinite;
-    font-size: 2.2rem; /* h1-like size */
+    font-size: clamp(1rem, 4vw, 2rem); /* responsive text size */
     font-weight: 700;
     margin: 0;
-    line-height: 1; /* keep it compact */
+    line-height: 1.2;
+    padding-left: 10px;
   }
 
   @keyframes scrollText {
@@ -46,7 +47,20 @@
   .announcement-bar:hover h1 {
     animation-play-state: paused;
   }
-</style> 
+
+  /* Optional: make sure sidebar appears above */
+  .sidebar {
+    position: relative;
+    z-index: 9999; /* higher priority */
+  }
+
+  @media (max-width: 768px) {
+    .announcement-bar {
+      height: 50px;
+    }
+  }
+</style>
+
 
 <h1 class="font-weight-semibold">3rd International Conference on Thin Films and Nanotechnology</h1>
 
