@@ -188,6 +188,11 @@ table,
               <!-- href="#feedback-section"> -->
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'poster' %}">Poster</a>
+              <!-- href="#feedback-section"> -->
+          </li>
+
           <li class="nav-item btn-contact-us pl-4 pl-lg-0">
             <button class="btn btn-info" data-toggle="modal" href="{% url 'home' %}">Previous Conferences</button>
             <!-- data-target="#exampleModal"> -->
@@ -197,7 +202,61 @@ table,
     </div> 
     </nav>   
   </header>
+<div class="announcement-bar">
+  <h1>📢 Announcement: Download Poster Template for your Presentation from the Poster Menu!</h1>
+</div>
 
+<style>
+  .announcement-bar {
+    width: 100%;
+    background-color: #ffeb3b; /* bright yellow */
+    color: #000; /* black text */
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    z-index: 10; /* LOWER than sidebar */
+  }
+
+  .announcement-bar h1 {
+    display: inline-block;
+    position: absolute;
+    will-change: transform;
+    animation: scrollText 12s linear infinite;
+    font-size: clamp(1rem, 4vw, 2rem); /* responsive text size */
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    padding-left: 10px;
+  }
+
+  @keyframes scrollText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .announcement-bar:hover h1 {
+    animation-play-state: paused;
+  }
+
+  /* Optional: make sure sidebar appears above */
+  .sidebar {
+    position: relative;
+    z-index: 9999; /* higher priority */
+  }
+
+  @media (max-width: 768px) {
+    .announcement-bar {
+      height: 50px;
+    }
+  }
+</style>
   
   <div class="banner" >
     <div class="container">
