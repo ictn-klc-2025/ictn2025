@@ -8,9 +8,28 @@
 
 {% block main %}
 
+  <div class="features-overview grid-margin" >
+      <div class="content-header" style="padding-bottom: 5rem;">
+        <h2>Sponsors Of Conference <br> <span style="color:red; font-size: 60%;">
+            The following are the sponsor of the 2025 ICTN-KLC Conference</span> </h2>
+        <!-- <h6 class="section-subtitle text-muted">Selected participants are invited to structure their presentation using the poster format below. <br>Participants whose papers have be selected for the conference should have received emails to this effect</h6> -->
+      
+
+        <img src="{% static 'assets/images/ictnklc_pics/sponsors.png' %}" class="img-fluid">
+</div>
+      <div class="row justify-content-center align-items-center" style="padding: 1rem;">
+          <div data-aos="fade-up" style="padding: 1rem;" >
+          <a href="{% static 'assets/images/ictnklc_pics/ConferenceSponsors.pdf' %}">
+          <button class="btn btn-rounded btn-outline-danger" download>Download Sponsors of Conference</button>
+          </a>
+        </div>          
+      </div>
+  </div>
+
+
       <section class="features-overview" id="features-section" >
         <div class="content-header">
-          <h2>Conference Sponsors Fees</h2>
+          <h2>Fees For Conference Sponsorship</h2>
           <h6 class="section-subtitle text-muted">Prospective sponsors are welcome to be part of this conference event<span style="color: red;"></span></h6>
         </div>
         <div class="d-md-flex justify-content-between">
@@ -116,7 +135,6 @@
                         <!-- <li> <strong>Note-3:</strong> The Conference registration and Banquet Fees are exclusive of GST and bank charges. These additional charges must be paid by the participant where applicable</li> -->
                     </ul>
                 </p>
-              
             </div>
             
           </div>
